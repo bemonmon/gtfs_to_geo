@@ -23,6 +23,10 @@ class GTFS:
         self.routes = None
         self.trips = None
         self.stop_times = None
+        self.agency = None
+        self.shapes = None
+        self.frequencies = None
+        self.calendar = None
 
     def load(self):
         """
@@ -41,6 +45,18 @@ class GTFS:
 
         # Load stop_times.txt file
         self.stop_times = self._load_file("stop_times.txt")
+
+        # Load agency.txt file
+        self.agency = self._load_file("agency.txt")
+
+        # Load shapes.txt file
+        self.shapes = self._load_file("shapes.txt")
+
+        # Load frequencies.txt file
+        self.frequencies = self._load_file("frequencies.txt")
+
+        # Load calendar.txt file
+        self.calendar = self._load_file("calendar.txt")
 
         # After loading all files, validate their content
         self.validate()
