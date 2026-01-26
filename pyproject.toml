@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gtfs_to_geo"
+version = "0.1.0"
+description = "Utilities for converting GTFS to geo objects"
+authors = [
+    { name = "Evgenii Miasnikov", email = "e.v.miasnikov@gmail.com" },
+    { name = "Zhanat Argimbaeva"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "geopandas",
+    "shapely",
+    "folium",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["data*", "tests*"]
+
+
+
+

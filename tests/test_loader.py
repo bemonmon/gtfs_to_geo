@@ -11,7 +11,7 @@ import tempfile
 import shutil
 
 # Import the GTFS class we want to test
-from gtfs_to_geo.loader import GTFS
+from gtfs_to_geo.loader.loader import GTFS
 
 # Import custom exceptions to check correct error handling
 from gtfs_to_geo.exceptions import MissingGTFSFileError, InvalidGTFSError
@@ -29,7 +29,7 @@ class TestGTFSLoader(unittest.TestCase):
         This method runs before each test.
         It defines the path to a valid sample GTFS feed.
         """
-        self.sample_feed = Path("data") / "sample_gtfs"
+        self.sample_feed = Path("data") / "berlin_gtfs"
 
     def test_load_success(self):
         """
