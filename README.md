@@ -25,11 +25,11 @@ This package is **not published on PyPI** and therefore cannot be installed via
 `pip install gtfs-to-geo`.
 
 To use the library, clone the repository and install it in editable mode:
-
 ```bash
 git clone https://github.com/your-username/gtfs_to_geo.git
 cd gtfs_to_geo
 pip install -e .
+```
 
 ## Usage
 
@@ -39,22 +39,22 @@ local folder.
 ---
 
 ### Load and validate a GTFS feed
-
 ```python
 from gtfs_to_geo.loader.loader import GTFS
 
 gtfs = GTFS("data/sample_gtfs")
 gtfs.load()
+```
 
 ### Access loaded GTFS tables
 
 After loading, the GTFS tables are available as pandas DataFrames:
-
 ```python
 stops = gtfs.stops
 routes = gtfs.routes
 trips = gtfs.trips
 stop_times = gtfs.stop_times
+```
 
 ### Network-based accessibility analysis
 
@@ -67,7 +67,6 @@ one or multiple origin stops.
 
 Example of running a limited multi-source Dijkstra algorithm to compute
 reachable stops within a given time budget:
-
 ```python
 from gtfs_to_geo.network.routing import multi_source_dijkstra_limited
 
@@ -76,12 +75,12 @@ reachable_times, parents = multi_source_dijkstra_limited(
     start_times,
     max_travel_time_min=30
 )
+```
 
 ### Visualization
 
 Reachable stops can be visualized using interactive maps based on the
 **Folium** library.
-
 ```python
 from gtfs_to_geo.visualization.folium_maps import plot_reachable_stops
 
@@ -91,12 +90,13 @@ m = plot_reachable_stops(
 )
 
 m.save("reachable_stops.html")
+```
 
 ### Testing
 
 Unit tests are implemented using the built-in `unittest` framework.
 
 To run all tests:
-
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
+```
