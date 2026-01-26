@@ -27,6 +27,7 @@ class GTFS:
         self.shapes = None
         self.frequencies = None
         self.calendar = None
+        self.transfers = None
 
     def load(self):
         """
@@ -57,6 +58,9 @@ class GTFS:
 
         # Load calendar.txt file
         self.calendar = self._load_file("calendar.txt")
+
+        # Load transfers.txt file
+        self.transfers = self._load_file("transfers.txt")
 
         # After loading all files, validate their content
         self.validate()
