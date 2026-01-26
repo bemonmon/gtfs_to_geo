@@ -31,6 +31,20 @@ cd gtfs_to_geo
 pip install -e .
 ```
 
+### Download GTFS data
+
+For proper functionality, you need to download GTFS data for Berlin:
+
+1. Visit https://unternehmen.vbb.de/digitale-services/datensaetze/
+2. Download the GTFS dataset for Berlin
+3. Extract the ZIP archive to the `data/berlin_gtfs` folder in the project directory
+```bash
+mkdir -p data/berlin_gtfs
+# Extract downloaded ZIP file here
+```
+
+---
+
 ## Usage
 
 The library can be used to load, validate and process a GTFS feed stored in a
@@ -42,7 +56,7 @@ local folder.
 ```python
 from gtfs_to_geo.loader.loader import GTFS
 
-gtfs = GTFS("data/sample_gtfs")
+gtfs = GTFS("data/berlin_gtfs")
 gtfs.load()
 ```
 
